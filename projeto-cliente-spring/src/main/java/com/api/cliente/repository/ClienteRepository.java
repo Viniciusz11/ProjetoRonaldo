@@ -7,5 +7,5 @@ import com.api.cliente.model.Cliente;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
-    // Métodos personalizados podem ser adicionados aqui se necessário
+
 }
