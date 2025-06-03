@@ -14,24 +14,40 @@ public class ClienteService {
 
     @Autowired
     private ClienteRepository clienteRepository;
-    
+
+
     public List<Cliente> listarTodos() {
         return clienteRepository.findAll();
     }
-    
+
     public Optional<Cliente> buscarPorId(Long id) {
         return clienteRepository.findById(id);
     }
-    
+
     public Cliente salvar(Cliente cliente) {
+
         return clienteRepository.save(cliente);
     }
-    
+
     public void deletar(Long id) {
         clienteRepository.deleteById(id);
     }
-    
+
     public boolean existePorId(Long id) {
         return clienteRepository.existsById(id);
     }
+
+    public Optional<Cliente> autenticar(String email, String senha) {
+        Optional<Cliente> clienteOpt = clienteRepository.findByEmail(email);
+
+        if (clienteOpt.isPresent()) {
+            Cliente cliente = clienteOpt.get();
+            if (cliente.getSenha().equals(senha)) {
+                return clienteOpt; 
+            }
+            
+        }
+        return Optional.empty(); 
+    }
+    
 }
