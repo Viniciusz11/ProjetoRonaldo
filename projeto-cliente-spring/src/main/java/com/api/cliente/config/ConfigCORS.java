@@ -15,11 +15,11 @@ public class ConfigCORS {
 
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**") // Aplica a todos os endpoints
-                        .allowedOrigins("*") // Permite todas as origens
-                        .allowedMethods("*") // Métodos permitidos
-                        .allowedHeaders("*") // Permite todos os headers
-                        .allowCredentials(false); // Se for true, allowedOrigins não pode ser "*"
+                registry.addMapping("/**") 
+                        .allowedOrigins("*") 
+                        .allowedMethods("*") 
+                        .allowedHeaders("*") 
+                        .allowCredentials(false); 
             }
         };
     }
