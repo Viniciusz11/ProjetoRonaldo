@@ -3,5 +3,6 @@ com/api/cliente/service/ClienteService.class
 com/api/cliente/config/SecurityConfig.class
 com/api/cliente/ClienteApplication.class
 com/api/cliente/model/Cliente.class
-com/api/cliente/dto/ClienteDTO.class
+com/api/cliente/auth/AuthController.class
 com/api/cliente/repository/ClienteRepository.class
+com/api/cliente/dto/ClienteDTO.class
