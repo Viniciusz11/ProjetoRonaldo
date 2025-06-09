@@ -89,4 +89,17 @@ public class ClienteController {
         clienteService.deletar(id);
         return ResponseEntity.noContent().build();
     }
+
+    // Endpoint de login
+    @PostMapping("/login")
+    public ResponseEntity<Cliente> login(@RequestBody ClienteDTO clienteDTO) {
+        Optional<Cliente> cliente = clienteService.login(clienteDTO.getEmail(), clienteDTO.getSenha());
+        if (cliente.isPresent()) {
+            return ResponseEntity.ok(cliente.get());
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+    }
 }
+
+
