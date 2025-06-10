@@ -34,4 +34,9 @@ public class ClienteService {
     public boolean existePorId(Long id) {
         return clienteRepository.existsById(id);
     }
+
+    // Adicione este método para buscar cliente pelo email
+    public Optional<Cliente> buscarPorEmail(String email) {
+        return clienteRepository.findByEmail(email);
+    }
 }

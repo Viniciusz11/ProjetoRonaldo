@@ -91,4 +91,17 @@ public class ClienteController {
         clienteService.deletar(id);
         return ResponseEntity.noContent().build();
     }
+
+    // Endpoint para login
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody ClienteDTO clienteDTO) {
+        Optional<Cliente> clienteOpt = clienteService.buscarPorEmail(clienteDTO.getEmail());
+        if (clienteOpt.isPresent()) {
+            Cliente cliente = clienteOpt.get();
+            if (cliente.getSenha().equals(clienteDTO.getSenha())) {
+                return ResponseEntity.ok(cliente);
+            }
+        }
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuário ou senha inválidos");
+    }
 }
