@@ -22,13 +22,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf().disable() 
-            .authorizeRequests()
-                .antMatchers("/api/auth/**").permitAll() 
-                .anyRequest().authenticated() 
-            .and()
-            .formLogin(); 
-        return http.build();
+    .csrf().disable()
+    .authorizeHttpRequests()
+    .requestMatchers("/api/usuarios").permitAll()
+    .anyRequest().authenticated();
     }
 
     @Bean
