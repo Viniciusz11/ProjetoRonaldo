@@ -89,4 +89,17 @@ public class ClienteController {
         clienteService.deletar(id);
         return ResponseEntity.noContent().build();
     }
+
+    // Endpoint de login
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody ClienteDTO clienteDTO) {
+        Optional<Cliente> cliente = clienteService.buscarPorEmailESenha(clienteDTO.getEmail(), clienteDTO.getSenha());
+        
+        if (cliente.isPresent()) {
+            return ResponseEntity.ok("Login bem-sucedido!");
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciais inválidas.");
+        }
+    }
 }
+

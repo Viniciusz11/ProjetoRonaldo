@@ -1,8 +1,0 @@
-/home/ubuntu/projeto-cliente-spring/projeto-cliente-spring/src/main/java/com/api/cliente/config/CorsConfig.java
-/home/ubuntu/projeto-cliente-spring/projeto-cliente-spring/src/main/java/com/api/cliente/config/SecurityConfig.java
-/home/ubuntu/projeto-cliente-spring/projeto-cliente-spring/src/main/java/com/api/cliente/repository/ClienteRepository.java
-/home/ubuntu/projeto-cliente-spring/projeto-cliente-spring/src/main/java/com/api/cliente/controller/ClienteController.java
-/home/ubuntu/projeto-cliente-spring/projeto-cliente-spring/src/main/java/com/api/cliente/ClienteApplication.java
-/home/ubuntu/projeto-cliente-spring/projeto-cliente-spring/src/main/java/com/api/cliente/service/ClienteService.java
-/home/ubuntu/projeto-cliente-spring/projeto-cliente-spring/src/main/java/com/api/cliente/dto/ClienteDTO.java
-/home/ubuntu/projeto-cliente-spring/projeto-cliente-spring/src/main/java/com/api/cliente/model/Cliente.java

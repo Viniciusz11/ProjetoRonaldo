@@ -1,0 +1,6 @@
+com/api/cliente/controller/ClienteController.class
+com/api/cliente/service/ClienteService.class
+com/api/cliente/ClienteApplication.class
+com/api/cliente/model/Cliente.class
+com/api/cliente/dto/ClienteDTO.class
+com/api/cliente/repository/ClienteRepository.class
