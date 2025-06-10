@@ -11,4 +11,3 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     // Métodos personalizados podem ser adicionados aqui se necessário
     Optional<Cliente> findByEmailAndSenha(String email, String senha);
 }
-

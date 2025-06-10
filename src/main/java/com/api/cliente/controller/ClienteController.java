@@ -26,14 +26,14 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
     
-    // Listar todos os clientes
+
+
     @GetMapping
     public ResponseEntity<List<Cliente>> listarTodos() {
         List<Cliente> clientes = clienteService.listarTodos();
         return ResponseEntity.ok(clientes);
     }
-    
-    // Buscar cliente por ID
+
     @GetMapping("/{id}")
     public ResponseEntity<Cliente> buscarPorId(@PathVariable Long id) {
         Optional<Cliente> cliente = clienteService.buscarPorId(id);
@@ -45,7 +45,8 @@ public class ClienteController {
         }
     }
     
-    // Cadastrar novo cliente
+
+
     @PostMapping
     public ResponseEntity<Cliente> cadastrar(@RequestBody ClienteDTO clienteDTO) {
         Cliente cliente = new Cliente();
@@ -57,7 +58,8 @@ public class ClienteController {
         return ResponseEntity.status(HttpStatus.CREATED).body(novoCliente);
     }
     
-    // Atualizar cliente existente
+
+
     @PutMapping("/{id}")
     public ResponseEntity<Cliente> atualizar(@PathVariable Long id, @RequestBody ClienteDTO clienteDTO) {
         if (!clienteService.existePorId(id)) {
@@ -79,7 +81,7 @@ public class ClienteController {
         }
     }
     
-    // Deletar cliente
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         if (!clienteService.existePorId(id)) {
@@ -89,6 +91,7 @@ public class ClienteController {
         clienteService.deletar(id);
         return ResponseEntity.noContent().build();
     }
+
 
     // Endpoint de login
     @PostMapping("/login")
@@ -102,4 +105,3 @@ public class ClienteController {
         }
     }
 }
-
