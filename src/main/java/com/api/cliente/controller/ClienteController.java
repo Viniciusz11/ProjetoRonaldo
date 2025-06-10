@@ -79,6 +79,7 @@ public class ClienteController {
         }
     }
     
+    // Deletar cliente
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         if (!clienteService.existePorId(id)) {
