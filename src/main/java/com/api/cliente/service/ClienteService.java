@@ -34,9 +34,4 @@ public class ClienteService {
     public boolean existePorId(Long id) {
         return clienteRepository.existsById(id);
     }
-
-    public Optional<Cliente> buscarPorEmailESenha(String email, String senha) {
-        return clienteRepository.findByEmailAndSenha(email, senha);
-    }
 }
-
