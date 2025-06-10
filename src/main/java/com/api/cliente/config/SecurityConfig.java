@@ -22,18 +22,18 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf().disable() // Desabilita CSRF para facilitar testes com Postman/frontend
+            .csrf().disable() 
             .authorizeRequests()
-                .antMatchers("/api/auth/**").permitAll() // Permite acesso ao endpoint de autenticação
-                .anyRequest().authenticated() // Todas as outras requisições exigem autenticação
+                .antMatchers("/api/auth/**").permitAll() 
+                .anyRequest().authenticated() 
             .and()
-            .formLogin(); // Ou .httpBasic() para autenticação básica
+            .formLogin(); 
         return http.build();
     }
 
     @Bean
     public UserDetailsService userDetailsService() {
-        // Exemplo de usuário em memória (para testes)
+        
         UserDetails user = User.builder()
             .username("user")
             .password(passwordEncoder().encode("password"))
@@ -52,9 +52,9 @@ public class SecurityConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("*"); // Permite todas as origens (ajuste para produção)
-        config.addAllowedHeader("*"); // Permite todos os cabeçalhos
-        config.addAllowedMethod("*"); // Permite todos os métodos HTTP
+        config.addAllowedOrigin("*"); 
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("*"); 
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
     }
